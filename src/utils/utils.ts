@@ -1,9 +1,10 @@
 import { CreateHTMLType } from "../types/types";
+import { characterTilesUtils } from "../config/characterTilesConfig";
 import {
+  keyboardUtils,
   keyArrRowOne,
   keyArrRowTwo,
   keyArrRowThree,
-  keyboardUtils,
 } from "../config/keybaordConfig";
 
 const createHTML = ({
@@ -50,10 +51,16 @@ const createComponent = () => {
       return header;
     },
 
-    characterTiles: ({ numberOfRows }: { numberOfRows: number }) => {
-      const characterTiles = createHTML({
-        elementName: "div",
-        className: "gameTiles",
+    characterTiles: ({
+      numberOfRows,
+      numberOfChar,
+    }: {
+      numberOfRows: number;
+      numberOfChar: number;
+    }) => {
+      const characterTiles = characterTilesUtils().createGameBoardTiles({
+        numberOfRows: numberOfRows,
+        numberOfChar: numberOfChar,
       });
       return characterTiles;
     },

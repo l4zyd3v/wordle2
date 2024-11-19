@@ -14,6 +14,7 @@ function initiate() {
   });
   const gameBoard = createComponent().characterTiles({
     numberOfRows: 6,
+    numberOfChar: 5,
   });
   const keyboard = createComponent().keyBoard();
 
