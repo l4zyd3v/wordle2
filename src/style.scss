@@ -15,16 +15,25 @@
   width: 90vw;
   background: var(--darkgrey);
   display: grid;
+  grid-template-rows: 1fr 6fr 3fr;
 }
 
 .keyboard {
   border: 2px solid red;
 }
 
-.gameTiles {
+.gametiles {
   border: 2px solid green;
+  display: grid;
 
-  &__row {}
+  &__row {
+    border: 1px solid pink;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-  &__tile {}
+  &__tile {
+    height: 100%;
+    border: 3px solid darkcyan;
+  }
 }
