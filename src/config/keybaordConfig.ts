@@ -23,7 +23,7 @@ function keyboardUtils() {
         const key = createHTML({
           elementName: "button",
           className: "key",
-          elementContent: keyArrRowOne[i],
+          elementContent: buttonValues[i],
         });
         row.appendChild(key);
       }

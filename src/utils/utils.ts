@@ -21,30 +21,43 @@ const createHTML = ({
   return element;
 };
 
-const createElement = () => {
+const createComponent = () => {
   return {
     main: () => {
       const main = createHTML({ elementName: "main", className: "main" });
 
       return main;
     },
-    header: () => {
+
+    header: ({ title, undertitle }: { title: string; undertitle: string }) => {
       const header = createHTML({ elementName: "header", className: "header" });
-      const heading1 = createHTML({ elementName: "h1", className: "heading1" });
-      const heading2 = createHTML({ elementName: "h2", className: "heading2" });
+
+      const heading1 = createHTML({
+        elementName: "h1",
+        className: "heading1",
+        elementContent: title,
+      });
+
+      const heading2 = createHTML({
+        elementName: "h2",
+        className: "heading2",
+        elementContent: undertitle,
+      });
 
       header.appendChild(heading1);
       header.appendChild(heading2);
 
       return header;
     },
-    gameTiles: () => {
-      const gameTiles = createHTML({
+
+    characterTiles: () => {
+      const caracterTiles = createHTML({
         elementName: "div",
         className: "gameTiles",
       });
-      return gameTiles;
+      return caracterTiles;
     },
+
     keyBoard: () => {
       const { createRowOfButtons } = keyboardUtils();
       const keyboard = createHTML({
@@ -77,4 +90,4 @@ const createElement = () => {
   };
 };
 
-export { createElement, createHTML };
+export { createComponent, createHTML };
