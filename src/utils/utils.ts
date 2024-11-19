@@ -50,12 +50,12 @@ const createComponent = () => {
       return header;
     },
 
-    characterTiles: () => {
-      const caracterTiles = createHTML({
+    characterTiles: ({ numberOfRows }: { numberOfRows: number }) => {
+      const characterTiles = createHTML({
         elementName: "div",
         className: "gameTiles",
       });
-      return caracterTiles;
+      return characterTiles;
     },
 
     keyBoard: () => {

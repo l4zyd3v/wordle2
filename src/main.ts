@@ -12,7 +12,9 @@ function initiate() {
     title: "titleText",
     undertitle: "underTitleText",
   });
-  const gameBoard = createComponent().characterTiles();
+  const gameBoard = createComponent().characterTiles({
+    numberOfRows: 6,
+  });
   const keyboard = createComponent().keyBoard();
 
   main.appendChild(header);

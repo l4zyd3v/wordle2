@@ -14,8 +14,13 @@
   height: 80vh;
   width: 90vw;
   background: var(--darkgrey);
+  display: grid;
 }
 
 .keyboard {
   border: 2px solid red;
+}
+
+.gameTiles {
+  border: 2px solid green;
 }
