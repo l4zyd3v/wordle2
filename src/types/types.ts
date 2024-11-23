@@ -12,6 +12,7 @@ type CreateRowOfButtonsTypes = {
   className: string;
 };
 
+// keyboardConfig.ts
 type CharacterTilesUtilsTypes = {
   numberOfRows: number;
   numberOfChar: number;

@@ -73,12 +73,20 @@ const createComponent = () => {
       });
 
       const rowsData = [
-        { buttonValues: keyArrRowOne, elementName: "div", className: "rows" },
-        { buttonValues: keyArrRowTwo, elementName: "div", className: "rows" },
+        {
+          buttonValues: keyArrRowOne,
+          elementName: "div",
+          className: "keyboard__rows",
+        },
+        {
+          buttonValues: keyArrRowTwo,
+          elementName: "div",
+          className: "keyboard__rows",
+        },
         {
           buttonValues: keyArrRowThree,
           elementName: "div",
-          className: "rows",
+          className: "keyboard__rows",
         },
       ];
 
