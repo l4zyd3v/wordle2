@@ -1,9 +1,10 @@
 import { CreateHTMLType } from "../types/types";
+import { characterTilesUtils } from "../config/characterTilesConfig";
 import {
+  keyboardUtils,
   keyArrRowOne,
   keyArrRowTwo,
   keyArrRowThree,
-  keyboardUtils,
 } from "../config/keybaordConfig";
 
 const createHTML = ({
@@ -50,12 +51,18 @@ const createComponent = () => {
       return header;
     },
 
-    characterTiles: () => {
-      const caracterTiles = createHTML({
-        elementName: "div",
-        className: "gameTiles",
+    characterTiles: ({
+      numberOfRows,
+      numberOfChar,
+    }: {
+      numberOfRows: number;
+      numberOfChar: number;
+    }) => {
+      const characterTiles = characterTilesUtils().createGameBoardTiles({
+        numberOfRows: numberOfRows,
+        numberOfChar: numberOfChar,
       });
-      return caracterTiles;
+      return characterTiles;
     },
 
     keyBoard: () => {
@@ -66,12 +73,20 @@ const createComponent = () => {
       });
 
       const rowsData = [
-        { buttonValues: keyArrRowOne, elementName: "div", className: "rows" },
-        { buttonValues: keyArrRowTwo, elementName: "div", className: "rows" },
+        {
+          buttonValues: keyArrRowOne,
+          elementName: "div",
+          className: "keyboard__rows",
+        },
+        {
+          buttonValues: keyArrRowTwo,
+          elementName: "div",
+          className: "keyboard__rows",
+        },
         {
           buttonValues: keyArrRowThree,
           elementName: "div",
-          className: "rows",
+          className: "keyboard__rows",
         },
       ];
 
