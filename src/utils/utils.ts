@@ -35,13 +35,13 @@ const createComponent = () => {
 
       const heading1 = createHTML({
         elementName: "h1",
-        className: "heading1",
+        className: "header__heading1",
         elementContent: title,
       });
 
       const heading2 = createHTML({
         elementName: "h2",
-        className: "heading2",
+        className: "header__heading2",
         elementContent: undertitle,
       });
 
