@@ -11,11 +11,14 @@ const createHTML = ({
   elementName,
   className,
   elementContent,
+  attribute,
 }: CreateHTMLType) => {
   if (!elementName) throw new Error("elementName is required");
 
   const element = document.createElement(elementName);
   element.classList.add(className);
+
+  attribute && element.setAttribute(attribute.name, attribute.value);
 
   if (elementContent) element.textContent = elementContent;
 
