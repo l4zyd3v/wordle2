@@ -1,11 +1,18 @@
 import "./style.scss";
 const app = document.querySelector<HTMLDivElement>("#app");
 import { createComponent } from "./utils/utils";
+import logic from "./utils/logic/logic";
+const testThing = document.querySelector(".keyboard");
 
-function initiate() {
+async function initiate() {
   if (!app) {
     throw new Error("App not found");
   }
+
+  // try {
+  // } catch (err) {
+  //   console.error(err);
+  // }
 
   const main = createComponent().main();
   const header = createComponent().header({
@@ -25,6 +32,9 @@ function initiate() {
   app.appendChild(main);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initiate();
-});
+async function start() {
+  await initiate();
+  await logic();
+}
+
+document.addEventListener("DOMContentLoaded", start);
