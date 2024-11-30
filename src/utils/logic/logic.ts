@@ -3,6 +3,8 @@ const tiles = document.getElementsByClassName("gametiles");
 
 import { AnswerType } from "../../types/types";
 
+console.log(keyboard);
+
 let secretWork = ["h", "e", "l", "l", "o"];
 let answer: AnswerType = [];
 

@@ -2,17 +2,11 @@ import "./style.scss";
 const app = document.querySelector<HTMLDivElement>("#app");
 import { createComponent } from "./utils/utils";
 import logic from "./utils/logic/logic";
-const testThing = document.querySelector(".keyboard");
 
 async function initiate() {
   if (!app) {
     throw new Error("App not found");
   }
-
-  // try {
-  // } catch (err) {
-  //   console.error(err);
-  // }
 
   const main = createComponent().main();
   const header = createComponent().header({
