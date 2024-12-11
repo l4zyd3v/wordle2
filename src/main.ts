@@ -1,7 +1,7 @@
 import "./style.scss";
 const app = document.querySelector<HTMLDivElement>("#app");
 import { createComponent } from "./utils/utils";
-import logic from "./utils/logic/logic";
+import logic from "./logic/logic";
 
 async function initiate() {
   if (!app) {

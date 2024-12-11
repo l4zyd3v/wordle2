@@ -29,12 +29,18 @@ function characterTilesUtils() {
             name: "tile",
             value: i + 1,
           };
+          const secondAttribute = {
+            name: "last-tile",
+            value: i === numberOfChar - 1 ? true : false,
+          };
 
           const tile = createHTML({
             elementName: "div",
             className: "gametiles__tile",
             attribute: attribute,
+            secondAttribute: secondAttribute,
           });
+
           row.appendChild(tile);
         }
 

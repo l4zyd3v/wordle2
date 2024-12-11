@@ -1,34 +1,38 @@
-// utils.ts
-type CreateHTMLType = {
-  elementName: string | undefined;
-  className: string;
-  elementContent?: string;
-  attribute?: {
-    name: string;
-    value: number;
-  };
+// createHtmlConfig.ts + ------------------------------
+
+type AttributeType = {
+  name: string;
+  value: string | number | boolean;
 };
 
-// keyboardConfig.ts
+type CreateHTMLType = {
+  elementName: string;
+  className: string;
+  elementContent?: string;
+  attribute?: AttributeType;
+  secondAttribute?: AttributeType;
+};
+
+type AddAttributeToHtmlType = {
+  element: HTMLElement;
+  attribute: AttributeType;
+};
+
+// keyboardConfig.ts --------------------------------
+
 type CreateRowOfButtonsTypes = {
   buttonValues: Array<string>;
   elementName: string | undefined;
   className: string;
 };
 
-// keyboardConfig.ts
 type CharacterTilesUtilsTypes = {
   numberOfRows: number;
   numberOfChar: number;
 };
 
-// LOL LOL LOL
-// omg life is a lie
-// TYPINGF!!!!!!
-// ---------------------------------------------------
-// ---------------------------------------------------
+// logic.ts -----------------------------------------
 
-// logic.ts
 type AnswerType = string[];
 
 export type {
@@ -36,4 +40,6 @@ export type {
   CreateRowOfButtonsTypes,
   CharacterTilesUtilsTypes,
   AnswerType,
+  AddAttributeToHtmlType,
+  AttributeType,
 };

@@ -6,19 +6,30 @@ import {
   keyArrRowTwo,
   keyArrRowThree,
 } from "../config/keybaordConfig";
+import { createHtmlUtils } from "../config/createHtmlConfig";
 
 const createHTML = ({
   elementName,
   className,
   elementContent,
   attribute,
+  secondAttribute,
 }: CreateHTMLType) => {
+  const { addAttributeToHtml } = createHtmlUtils();
+
   if (!elementName) throw new Error("elementName is required");
 
   const element = document.createElement(elementName);
+
   element.classList.add(className);
 
-  attribute && element.setAttribute(attribute.name, attribute.value);
+  if (attribute) {
+    addAttributeToHtml({ element, attribute });
+  }
+
+  if (secondAttribute) {
+    addAttributeToHtml({ element, attribute: secondAttribute });
+  }
 
   if (elementContent) element.textContent = elementContent;
 
