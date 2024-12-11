@@ -1,8 +1,9 @@
 import "./style.scss";
 const app = document.querySelector<HTMLDivElement>("#app");
 import { createComponent } from "./utils/utils";
+import logic from "./logic/logic";
 
-function initiate() {
+async function initiate() {
   if (!app) {
     throw new Error("App not found");
   }
@@ -25,6 +26,9 @@ function initiate() {
   app.appendChild(main);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initiate();
-});
+async function start() {
+  await initiate();
+  await logic();
+}
+
+document.addEventListener("DOMContentLoaded", start);
